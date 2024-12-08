@@ -16,7 +16,9 @@ function SuporteEmergencia() {
   const [confirmado, setConfirmado] = useState(false);
   const [estimativa, setEstimativa] = useState("");
 
-  const manipularMudanca = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const manipularMudanca = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormulario((anterior) => ({ ...anterior, [name]: value }));
   };
@@ -27,7 +29,9 @@ function SuporteEmergencia() {
       return;
     }
     try {
-      const resposta = await fetch(`https://viacep.com.br/ws/${formulario.cep}/json/`);
+      const resposta = await fetch(
+        `https://viacep.com.br/ws/${formulario.cep}/json/`
+      );
       const dados = await resposta.json();
       if (dados.erro) {
         alert("CEP inválido. Por favor, tente novamente.");
@@ -36,6 +40,7 @@ function SuporteEmergencia() {
       }
       setInformacaoCep(dados);
     } catch (erro) {
+      console.error("Erro ao buscar informações do CEP:", erro);
       alert("Erro ao buscar informações do CEP. Tente novamente.");
       setInformacaoCep(null);
     }
@@ -71,10 +76,15 @@ function SuporteEmergencia() {
       <div className={styles.container}>
         <h1 className={styles.titulo}>Suporte para Emergência de Recarga</h1>
         <p className={styles.descricao}>
-          O Suporte para Emergência de Recarga da ChargeMap foi criado para oferecer segurança e tranquilidade aos motoristas de veículos elétricos em situações imprevistas.
+          O Suporte para Emergência de Recarga da ChargeMap foi criado para
+          oferecer segurança e tranquilidade aos motoristas de veículos
+          elétricos em situações imprevistas.
         </p>
         <p className={styles.detalhes}>
-          Este serviço inclui a entrega de uma bateria portátil, caso o veículo não tenha energia suficiente para chegar ao carregador mais próximo. Com este suporte, a ChargeMap garante que você esteja sempre assistido, mesmo nos momentos mais desafiadores.
+          Este serviço inclui a entrega de uma bateria portátil, caso o veículo
+          não tenha energia suficiente para chegar ao carregador mais próximo.
+          Com este suporte, a ChargeMap garante que você esteja sempre
+          assistido, mesmo nos momentos mais desafiadores.
         </p>
 
         {!confirmado ? (
@@ -113,7 +123,11 @@ function SuporteEmergencia() {
                   className={styles.input}
                   placeholder="Digite seu CEP"
                 />
-                <button onClick={buscarInformacaoCep} className={styles.botaoCep}>
+                <button
+                  type="button"
+                  onClick={buscarInformacaoCep}
+                  className={styles.botaoCep}
+                >
                   Buscar
                 </button>
               </div>
@@ -121,7 +135,9 @@ function SuporteEmergencia() {
             {informacaoCep && (
               <div className={styles.cepInfo}>
                 <p>
-                  <strong>Endereço:</strong> {informacaoCep.logradouro}, {informacaoCep.bairro}, {informacaoCep.localidade} - {informacaoCep.uf}
+                  <strong>Endereço:</strong> {informacaoCep.logradouro},{" "}
+                  {informacaoCep.bairro}, {informacaoCep.localidade} -{" "}
+                  {informacaoCep.uf}
                 </p>
               </div>
             )}
@@ -147,6 +163,7 @@ function SuporteEmergencia() {
               ></textarea>
             </label>
             <button
+              type="button"
               onClick={enviarFormulario}
               className={styles.botaoSolicitar}
               disabled={solicitando}
@@ -158,7 +175,9 @@ function SuporteEmergencia() {
           <div className={styles.confirmacao}>
             <h2 className={styles.tituloConfirmacao}>Solicitação Confirmada!</h2>
             <p className={styles.mensagem}>
-              Sua solicitação foi registrada com sucesso. O suporte técnico chegará ao local informado em aproximadamente <strong>{estimativa}</strong>.
+              Sua solicitação foi registrada com sucesso. O suporte técnico
+              chegará ao local informado em aproximadamente{" "}
+              <strong>{estimativa}</strong>.
             </p>
           </div>
         )}
@@ -166,6 +185,6 @@ function SuporteEmergencia() {
       <Footer />
     </>
   );
-};
+}
 
 export default SuporteEmergencia;

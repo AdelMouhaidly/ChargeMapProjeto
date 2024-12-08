@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import styles from "../styles/login.module.css";
 
 function PaginaLogin() {
@@ -39,9 +40,9 @@ function PaginaLogin() {
           <h1 className={styles.titulo}>Login ao Sistema</h1>
           <p className={styles.subtitulo}>
             Por favor, insira suas informações de login ou{" "}
-            <a href="/cadastro" className={styles.link}>
+            <Link href="/cadastro" className={styles.link}>
               clique aqui para se registrar
-            </a>
+            </Link>
           </p>
           <form onSubmit={realizarLogin}>
             <div className={styles.grupoInput}>

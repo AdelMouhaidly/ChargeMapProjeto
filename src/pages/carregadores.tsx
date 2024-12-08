@@ -95,9 +95,11 @@ function CarregadoresProximos() {
     const origem = `${informacoes.logradouro}, ${informacoes.localidade}`;
     const destino = `${carregadorSelecionado.latitude},${carregadorSelecionado.longitude}`;
 
-    const url = `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCJ4L0rlXF8DuMX0719v4a2xl2wGaeNqZk&origin=${encodeURIComponent(
-      origem
-    )}&destination=${encodeURIComponent(destino)}&mode=driving`;
+    const url = `https://www.google.com/maps/embed/v1/directions?key=${
+      process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    }&origin=${encodeURIComponent(origem)}&destination=${encodeURIComponent(
+      destino
+    )}&mode=driving`;
 
     setRotaMapa(url);
   };
@@ -165,58 +167,50 @@ function CarregadoresProximos() {
           <>
             <div className={styles.caixaInformacoes}>
               <h2>Informações do CEP:</h2>
-              <p><strong>Rua:</strong> {informacoes.logradouro}</p>
-              <p><strong>Bairro:</strong> {informacoes.bairro}</p>
-              <p><strong>Cidade:</strong> {informacoes.localidade}</p>
-              <p><strong>Estado:</strong> {informacoes.uf}</p>
+              <p>
+                <strong>Rua:</strong> {informacoes.logradouro}
+              </p>
+              <p>
+                <strong>Bairro:</strong> {informacoes.bairro}
+              </p>
+              <p>
+                <strong>Cidade:</strong> {informacoes.localidade}
+              </p>
+              <p>
+                <strong>Estado:</strong> {informacoes.uf}
+              </p>
             </div>
             <div className={styles.caixaMapa}>
               <iframe
                 className={styles.mapa}
-                src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyCJ4L0rlXF8DuMX0719v4a2xl2wGaeNqZk&q=carregadores+eletricos+perto+de+${informacoes.logradouro},${informacoes.localidade}`}
+                src={`https://www.google.com/maps/embed/v1/search?key=${
+                  process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+                }&q=carregadores+eletricos+perto+de+${informacoes.logradouro},${informacoes.localidade}`}
                 allowFullScreen
                 loading="lazy"
               ></iframe>
             </div>
             <div className={styles.listaCarregadores}>
               <h2>Carregadores Encontrados:</h2>
-              {carregadores.length > 0 ? (
-                carregadores.map((carregador, index) => (
-                  <div
-                    key={index}
-                    className={`${styles.carregador} ${
-                      carregadorSelecionado === carregador
-                        ? styles.carregadorSelecionado
-                        : ""
-                    }`}
-                    onClick={() => selecionarCarregador(carregador)}
-                  >
-                    <h3>{carregador.nome}</h3>
-                    <p>
-                      <strong>Velocidade:</strong> {carregador.velocidade}
-                    </p>
-                    <p>
-                      <strong>Conector:</strong> {carregador.conector}
-                    </p>
-                    <p>
-                      <strong>Status:</strong> {carregador.status}
-                    </p>
-                    <p>
-                      <strong>Tempo Estimado:</strong>{" "}
-                      {carregador.tempoEstimado}
-                    </p>
-                    <p>
-                      <strong>Custo:</strong> {carregador.custo}
-                    </p>
-                    <p>
-                      <strong>Formas de Pagamento:</strong>{" "}
-                      {carregador.pagamento.join(", ")}
-                    </p>
-                  </div>
-                ))
-              ) : (
-                <p>Nenhum carregador encontrado com os filtros selecionados.</p>
-              )}
+              {carregadores.map((carregador, index) => (
+                <div
+                  key={index}
+                  className={`${styles.carregador} ${
+                    carregadorSelecionado === carregador
+                      ? styles.carregadorSelecionado
+                      : ""
+                  }`}
+                  onClick={() => selecionarCarregador(carregador)}
+                >
+                  <h3>{carregador.nome}</h3>
+                  <p>
+                    <strong>Velocidade:</strong> {carregador.velocidade}
+                  </p>
+                  <p>
+                    <strong>Conector:</strong> {carregador.conector}
+                  </p>
+                </div>
+              ))}
             </div>
             {carregadorSelecionado && (
               <button className={styles.botaoRoteirizar} onClick={criarRota}>

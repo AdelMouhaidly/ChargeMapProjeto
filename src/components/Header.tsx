@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Header.module.css";
 
 function Header() {
   const [nomeUsuario, setNomeUsuario] = useState<string | null>(null);
   const [menuAberto, setMenuAberto] = useState(false);
   const [modalAberto, setModalAberto] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const usuario = JSON.parse(localStorage.getItem("user") || "{}");
@@ -15,7 +18,7 @@ function Header() {
     if (!salvarCredenciais) {
       localStorage.removeItem("user");
     }
-    window.location.href = "/";
+    router.push("/");
   };
 
   return (
@@ -24,24 +27,24 @@ function Header() {
         <div className={styles.logo}>ChargeMap</div>
 
         <nav className={styles.nav}>
-          <a href="/inicio" className={styles.link}>
+          <Link href="/inicio" className={styles.link}>
             Sobre Nós
-          </a>
-          <a href="/carregadores" className={styles.link}>
+          </Link>
+          <Link href="/carregadores" className={styles.link}>
             Carregadores Próximos
-          </a>
-          <a href="/reservas" className={styles.link}>
+          </Link>
+          <Link href="/reservas" className={styles.link}>
             Sistema de Reservas
-          </a>
-          <a href="/assinaturas" className={styles.link}>
+          </Link>
+          <Link href="/assinaturas" className={styles.link}>
             Assinaturas
-          </a>
-          <a href="/integrantes" className={styles.link}>
+          </Link>
+          <Link href="/integrantes" className={styles.link}>
             Integrantes
-          </a>
-          <a href="/suporte" className={styles.link}>
+          </Link>
+          <Link href="/suporte" className={styles.link}>
             Suporte
-          </a>
+          </Link>
         </nav>
 
         <div className={styles.usuario}>
@@ -53,9 +56,9 @@ function Header() {
           </div>
           {menuAberto && (
             <div className={styles.menu}>
-              <a href="/informacoes" className={styles.menuItem}>
+              <Link href="/informacoes" className={styles.menuItem}>
                 Informações Pessoais
-              </a>
+              </Link>
               <span
                 onClick={() => {
                   setMenuAberto(false);
@@ -105,6 +108,6 @@ function Header() {
       )}
     </>
   );
-};
+}
 
 export default Header;
