@@ -1,0 +1,175 @@
+.container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .titulo {
+    text-align: center;
+    color: #34c759;
+    margin-bottom: 20px;
+  }
+  
+  .formulario {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .formulario input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b2b3d;
+    color: white;
+  }
+  
+  .formulario button {
+    padding: 10px 20px;
+    background-color: #34c759;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .formulario button:hover {
+    background-color: #2da747;
+  }
+  
+  .tabela {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #2b2b3d;
+  }
+  
+  .tabela th,
+  .tabela td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #3b3b4d;
+  }
+  
+  .acoes {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .botaoEditar {
+    padding: 5px 10px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botaoEditar:hover {
+    background-color: #cc8400;
+  }
+  
+  .botaoExcluir {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botaoExcluir:hover {
+    background-color: #cc0000;
+  }
+  
+  @media (max-width: 1024px) {
+    .formulario {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  
+    .formulario input {
+      width: 100%;
+    }
+  
+    .formulario button {
+      width: 100%;
+    }
+  
+    .tabela {
+      font-size: 14px;
+    }
+  
+    .botaoEditar,
+    .botaoExcluir {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .titulo {
+      font-size: 24px;
+    }
+  
+    .formulario input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .formulario button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .tabela th,
+    .tabela td {
+      padding: 8px;
+    }
+  
+    .botaoEditar,
+    .botaoExcluir {
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .titulo {
+      font-size: 20px;
+    }
+  
+    .formulario {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .formulario input {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .formulario button {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  
+    .tabela {
+      font-size: 12px;
+    }
+  
+    .botaoEditar,
+    .botaoExcluir {
+      font-size: 10px;
+      padding: 4px 6px;
+    }
+  }
+  

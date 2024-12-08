@@ -1,0 +1,223 @@
+.container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    min-height: calc(100vh - 140px);
+}
+
+.titulo {
+    color: #34c759;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.descricao,
+.detalhes {
+    text-align: center;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #2b2b3d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.subtitulo {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 15px;
+    color: #d1d1d1;
+    font-size: 14px;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b3b4d;
+    color: white;
+    font-size: 14px;
+}
+
+.textarea {
+    height: 80px;
+    resize: none;
+}
+
+.cepInput {
+    display: flex;
+    gap: 10px;
+}
+
+.botaoCep {
+    padding: 10px;
+    background-color: #34c759;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botaoCep:hover {
+    background-color: #2da747;
+    transform: scale(1.05);
+}
+
+.botaoSolicitar {
+    width: 100%;
+    padding: 10px;
+    background-color: #34c759;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botaoSolicitar:hover {
+    background-color: #2da747;
+    transform: scale(1.05);
+}
+
+.botaoSolicitar:disabled {
+    background-color: #6b6b6b;
+    cursor: not-allowed;
+}
+
+.cepInfo {
+    background-color: #2b2b3d;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirmacao {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2b2b3d;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tituloConfirmacao {
+    color: #34c759;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.mensagem {
+    color: #d1d1d1;
+    font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .form {
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .input,
+    .textarea {
+        font-size: 14px;
+    }
+
+    .botaoCep,
+    .botaoSolicitar {
+        font-size: 14px;
+    }
+
+    .cepInfo {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .descricao,
+    .detalhes {
+        font-size: 14px;
+    }
+
+    .input,
+    .textarea {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .botaoCep,
+    .botaoSolicitar {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 20px;
+    }
+
+    .descricao,
+    .detalhes {
+        font-size: 12px;
+    }
+
+    .form {
+        padding: 8px;
+    }
+
+    .input,
+    .textarea {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .botaoCep,
+    .botaoSolicitar {
+        padding: 6px;
+        font-size: 10px;
+    }
+
+    .tituloConfirmacao {
+        font-size: 20px;
+    }
+
+    .mensagem {
+        font-size: 12px;
+    }
+}

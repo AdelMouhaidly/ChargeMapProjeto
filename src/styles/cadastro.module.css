@@ -1,0 +1,226 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e2f;
+}
+
+.caixaCadastro {
+  display: flex;
+  width: 800px;
+  height: 550px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.esquerda {
+  flex: 1;
+  background-color: #2b2b3d;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #aaa;
+}
+
+.link {
+  color: #34c759;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.grupoEntrada,
+.grupoEntradaSenha {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.entrada {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b3b4d;
+  color: white;
+  font-size: 14px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.entrada::placeholder {
+  color: #888;
+}
+
+.botaoCadastrar {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #34c759;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botaoCadastrar:hover {
+  background-color: #2da747;
+}
+
+.botaoOlhinho {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botaoOlhinho:hover {
+  color: #fff;
+}
+
+.iconeOlho {
+  width: 20px;
+  height: 20px;
+  transition: color 0.3s ease;
+}
+
+.grupoEntrada + .grupoEntrada,
+.grupoEntradaSenha + .grupoEntradaSenha {
+  margin-top: 20px;
+}
+
+.erroMensagem {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: bold;
+  text-shadow: 0px 1px 2px rgba(255, 0, 0, 0.6);
+}
+
+.mensagem {
+  font-size: 16px;
+  font-weight: bold;
+  color: #34c759;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: 0px 1px 2px rgba(0, 255, 0, 0.6);
+}
+
+.direita {
+  flex: 1;
+  background: linear-gradient(135deg, #1e6b26, #34c759);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloChargeMap {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 20px #34c759, 0 0 40px #34c759;
+}
+
+@media (max-width: 1024px) {
+  .caixaCadastro {
+    width: 700px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .esquerda {
+    padding: 30px;
+  }
+
+  .titulo {
+    font-size: 24px;
+  }
+
+  .tituloChargeMap {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .caixaCadastro {
+    width: 90%;
+    height: auto;
+  }
+
+  .esquerda {
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+
+  .tituloChargeMap {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .caixaCadastro {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .esquerda {
+    padding: 15px;
+  }
+
+  .titulo {
+    font-size: 18px;
+  }
+
+  .subtitulo {
+    font-size: 12px;
+  }
+
+  .tituloChargeMap {
+    font-size: 28px;
+  }
+
+  .entrada {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .botaoCadastrar {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,262 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #1e1e2f;
+    color: white;
+}
+
+.principal {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #34c759;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #aaa;
+}
+
+.caixaFormulario {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.inputCep {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3b3b4d;
+    color: white;
+}
+
+.botaoBuscar {
+    padding: 10px 20px;
+    background-color: #34c759;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botaoBuscar:hover {
+    background-color: #2da747;
+}
+
+.caixaFiltros {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.caixaFiltros label {
+    font-size: 16px;
+    color: white;
+}
+
+.caixaFiltros select {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3b3b4d;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.caixaFiltros select:hover {
+    background-color: #4c4c5d;
+}
+
+.caixaInformacoes {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #2b2b3d;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.caixaMapa {
+    margin: 20px auto;
+    max-width: 800px;
+    height: 400px;
+}
+
+.mapa {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.listaCarregadores {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.carregador {
+    background-color: #2b2b3d;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.carregador h3 {
+    font-size: 18px;
+    color: #34c759;
+    margin-bottom: 5px;
+}
+
+.carregador p {
+    font-size: 14px;
+    margin: 2px 0;
+    color: #ccc;
+}
+
+.carregador p strong {
+    color: white;
+}
+
+.botaoTrocarCep {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.botaoTrocarCep:hover {
+    background-color: #e05242;
+}
+
+.botaoRoteirizar {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.botaoRoteirizar:hover {
+    background-color: #0056b3;
+}
+
+.carregadorSelecionado {
+    border: 2px solid #34c759;
+}
+
+@media (max-width: 1024px) {
+    .caixaFormulario {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .inputCep {
+        width: 100%;
+    }
+
+    .botaoBuscar {
+        width: 100%;
+    }
+
+    .caixaFiltros {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .caixaInformacoes {
+        max-width: 90%;
+    }
+
+    .caixaMapa {
+        height: 300px;
+    }
+
+    .listaCarregadores {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    .botaoRoteirizar {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .carregador h3 {
+        font-size: 16px;
+    }
+
+    .carregador p {
+        font-size: 12px;
+    }
+
+    .caixaMapa {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 24px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+    .inputCep {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .botaoBuscar,
+    .botaoTrocarCep {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .botaoRoteirizar {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .caixaInformacoes {
+        padding: 15px;
+    }
+
+    .caixaMapa {
+        height: 200px;
+    }
+}

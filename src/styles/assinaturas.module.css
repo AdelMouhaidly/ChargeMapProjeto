@@ -1,0 +1,191 @@
+.container {
+    padding: 20px;
+    background-color: #1e1e2f;
+    min-height: calc(100vh - 140px);
+}
+
+.titulo {
+    color: #34c759;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.descricao {
+    text-align: center;
+    color: #d1d1d1;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.planos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plano {
+    background-color: #2b2b3d;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    width: 320px;
+    min-height: 520px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plano:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.imagemPlano {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+.nomePlano {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.planoBasico .nomePlano {
+    color: #34c759;
+}
+
+.planoPremium .nomePlano {
+    color: #ff9900;
+}
+
+.beneficios {
+    list-style: none;
+    padding: 0;
+    color: #e0e0e0;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.beneficios li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.beneficios li::before {
+    content: "✓";
+    color: #34c759;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.planoPremium .beneficios li::before {
+    color: #ff9900;
+}
+
+.valor {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.botaoContratar {
+    padding: 12px 25px;
+    background-color: #34c759;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    align-self: center;
+}
+
+.botaoContratar:hover {
+    background-color: #2da747;
+    transform: scale(1.05);
+}
+
+.planoPremium .botaoContratar {
+    background-color: #ff9900;
+}
+
+.planoPremium .botaoContratar:hover {
+    background-color: #e68a00;
+}
+
+@media (max-width: 1024px) {
+    .planos {
+        gap: 20px;
+    }
+
+    .plano {
+        width: 280px;
+        min-height: 480px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .descricao {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .planos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plano {
+        width: 90%;
+    }
+
+    .titulo {
+        font-size: 24px;
+    }
+
+    .descricao {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .plano {
+        padding: 20px;
+    }
+
+    .nomePlano {
+        font-size: 20px;
+    }
+
+    .valor {
+        font-size: 18px;
+    }
+
+    .botaoContratar {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .descricao {
+        font-size: 12px;
+    }
+}
